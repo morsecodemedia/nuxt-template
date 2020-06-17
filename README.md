@@ -3,17 +3,23 @@
 > A template to start Nuxt projects, loaded with all the additional modules that are used in almost all of our projects.
 
 ## Logs
-`$ yarn add @nuxtjs/sentry`
-`$ yarn add nuxt-logrocket`
+### @nuxtjs/sentry
+https://github.com/nuxt-community/sentry-module
+
+### nuxt-logrocket
+https://github.com/nuxt-community/nuxt-logrocket
 
 ## Front-End Frameworks
-`$ yarn add -D @morsecodemedia/containers.css`
+### @morsecodemedia/containers.css
+https://github.com/morsecodemedia/containers.css
 
 ## Fonts
-`$ yarn add nuxt-webfontloader`
+### nuxt-webfontloader
+https://github.com/Developmint/nuxt-webfontloader
 
 ## Input Mask
-`$ yarn add vue-the-mask`
+### vue-the-mask
+https://github.com/vuejs-tips/vue-the-mask
 
 ## Build Setup
 
