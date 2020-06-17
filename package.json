@@ -1,0 +1,42 @@
+{
+  "name": "nuxt-template",
+  "version": "1.0.0",
+  "description": "A template to start Nuxt projects, loaded with all the additional modules that are used in almost all of our projects.",
+  "author": "A morsecodemedia/tomasino project",
+  "contributors": [
+    {
+      "name": "Brandon Morse",
+      "email": "brandon@morsecodemedia.com",
+      "url": "https://github.com/morsecodemedia"
+    },
+    {
+      "name": "James Tomasino",
+      "email": "james@tomasino.org",
+      "url": "https://github.com/jamestomasino"
+    }
+  ],
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/redirect-module": "^0.3.1",
+    "@nuxtjs/robots": "^2.4.2",
+    "@nuxtjs/sitemap": "^2.3.2",
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config": "^3.0.0",
+    "@nuxtjs/eslint-module": "^2.0.0",
+    "@nuxtjs/stylelint-module": "^4.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.2.0",
+    "eslint-plugin-nuxt": "^1.0.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^8.0.2",
+    "stylelint": "^13.6.0"
+  }
+}
