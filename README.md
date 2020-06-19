@@ -2,18 +2,39 @@
 
 > A template to start Nuxt projects, loaded with all the additional modules that are used in almost all of our projects.
 
-## What's Included???
-- Eslint
-- Stylelint
-- Node-Sass
-- Sass-loader
-- @nuxtjs/redirect-module
-- @nuxtjs/robots
-- @nuxtjs/sitemap
+## What's Included Out-of-the-Box???
+
+### Eslint
+https://github.com/eslint/eslint
+
+### Stylelint
+https://github.com/stylelint/stylelint
+
+### Node-Sass
+https://github.com/sass/node-sass
+
+### Sass-loader
+https://github.com/webpack-contrib/sass-loader
+
+### @nuxtjs/redirect-module
+https://github.com/nuxt-community/redirect-module
+
+### @nuxtjs/robots
+https://github.com/nuxt-community/robots-module
+
+### @nuxtjs/sitemap
+https://github.com/nuxt-community/sitemap-module
 
 ## What Else Do We Use???
 
+### Accessibility (A11Y)
+### Vue Axe
+https://github.com/vue-a11y/vue-axe
+
 ### Fonts
+#### vue-fontawesome
+https://github.com/FortAwesome/vue-fontawesome
+
 #### nuxt-webfontloader
 https://github.com/Developmint/nuxt-webfontloader
 
@@ -41,6 +62,7 @@ https://nuxtjs.org
   - Scroll Tracking (Evergreen)
   - Scroll Tracking (IE11 Compatible)
   - Event Tracking
+  - Google GTag
   - ISI Module
   - Axios
   - Postmarkapp
@@ -49,10 +71,7 @@ https://nuxtjs.org
   - Vue-Scrollto
   - Vue Video Player
   - Vue Vimeo Player
-  - Google GTag
   - DotEnv
-  - Font Awesome
-  - Vue Axe
   - Vue LazyLoad
   - Vue Style-resources
   - Vue Persisted State
