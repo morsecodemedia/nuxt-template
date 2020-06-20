@@ -3,27 +3,32 @@
 > A template to start Nuxt projects, loaded with all the additional modules that are used in almost all of our projects.
 
 ## What's Included Out-of-the-Box???
+### Functionality
+#### Killscroll (Watches isModalOpen - Vuex)
+#### Exit Modal (Vuex Store)
 
-### Eslint
+### Packages
+#### Eslint
 https://github.com/eslint/eslint
 
-### Stylelint
+#### Stylelint
 https://github.com/stylelint/stylelint
 
-### Node-Sass
+#### Node-Sass
 https://github.com/sass/node-sass
 
-### Sass-loader
+#### Sass-loader
 https://github.com/webpack-contrib/sass-loader
 
-### @nuxtjs/redirect-module
+#### @nuxtjs/redirect-module
 https://github.com/nuxt-community/redirect-module
 
-### @nuxtjs/robots
+#### @nuxtjs/robots
 https://github.com/nuxt-community/robots-module
 
-### @nuxtjs/sitemap
+#### @nuxtjs/sitemap
 https://github.com/nuxt-community/sitemap-module
+
 
 ## What Else Do We Use???
 
@@ -76,6 +81,5 @@ https://nuxtjs.org
   - Vue Style-resources
   - Vue Persisted State
 - Configure more of the build
-  - Killscroll
   - References Module and VUEX Store
   - Footnotes Module and VUEX Store
