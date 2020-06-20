@@ -5,8 +5,27 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
+let bodyTag = null
+
 export default {
   name: 'App',
+  computed: {
+    ...mapGetters('modals', ['isModalOpen'])
+  },
+  watch: {
+    isModalOpen: (val) => {
+      if (val) {
+        bodyTag.classList.add('killscroll')
+      } else {
+        bodyTag.classList.remove('killscroll')
+      }
+    }
+  },
+  mounted () {
+    bodyTag = document.getElementsByTagName('body')[0]
+  },
   head () {
     return {
       title: '',
