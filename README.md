@@ -96,7 +96,13 @@ https://nuxtjs.org
 - clone repo into `~/serva` and `~/servb` with ssh
 - symlink `Makefile` and `ecosystem.config.js` to home folder
 - install the latest node-js (not apt, look this up)
+- install git-lfs
+- install pm2 globally
 - install ufw and allow ssh, http, and https, then enable
 - install nginx
-- configure vhosts for testing
-- install certbot (configure later when DNS is ready)
+- configure vhosts for testing (use sample conf in repo, probably to dummy url for now)
+- install certbot (reconfigure later when DNS is ready for real prod)
+- `make production` && `make stage`
+- `pm2 startup` && `pm2 save` - to return the server to working order on reboot
+- check that backups are enabled and any alerts are configured on the vm
+- add to up/down detection
