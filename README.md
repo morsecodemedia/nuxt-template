@@ -83,3 +83,20 @@ https://nuxtjs.org
 - Configure more of the build
   - References Module and VUEX Store
   - Footnotes Module and VUEX Store
+
+## Server Setup
+
+- create a ubuntu 18.04 vm
+- create user `web`
+- add `web` to groups `sudo` and `www-data`
+- log in as `web` and secure ssh
+- add ssh pubkeys to `web` user for deployment access
+- create ssh key as web user
+- use web user's pubkey as deploy key in project repository
+- clone repo into `~/serva` and `~/servb` with ssh
+- symlink `Makefile` and `ecosystem.config.js` to home folder
+- install the latest node-js (not apt, look this up)
+- install ufw and allow ssh, http, and https, then enable
+- install nginx
+- configure vhosts for testing
+- install certbot (configure later when DNS is ready)
