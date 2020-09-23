@@ -82,5 +82,8 @@ export default {
     */
     extend (config, ctx) {
     }
-  }
+  },
+  components: [
+    '~/components/brand'
+  ]
 }
