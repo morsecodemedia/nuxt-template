@@ -30,18 +30,18 @@ serva:
 	git reset --hard HEAD; \
 	git pull; \
 	git lfs pull; \
-	npm install; \
-	npm run build
-	pm2 startOrRestart ecosystem.config.js --only serva
+	yarn; \
+	yarn build
+	$$HOME/.npm-packages/bin/pm2 startOrRestart ecosystem.config.js --only serva
 
 servb:
 	cd "./servb"; \
 	git reset --hard HEAD; \
 	git pull; \
 	git lfs pull; \
-	npm install; \
-	npm run build
-	pm2 startOrRestart ecosystem.config.js --only servb
+	yarn; \
+	yarn build
+	$$HOME/.npm-packages/bin/pm2 startOrRestart ecosystem.config.js --only servb
 
 swap-env: ## reverse stage and production environments in nginx
 	@if [ "3000" = "$$(grep "127.0.0.1" /etc/nginx/sites-available/production | sed "s/^.*://" | sed "s/;.*$$//")" ]; then \
