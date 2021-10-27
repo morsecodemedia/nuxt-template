@@ -118,3 +118,34 @@ sub {
     z-index: 999;
   }
 }
+
+.accessible {
+	position: absolute;
+	overflow: hidden;
+	width: 1px;
+	height: 1px;
+	opacity: 0;
+	transform: translateX(-1000);
+}
+
+@media screen and (max-width: 767px) {
+	.accessible-mobile {
+		position: absolute;
+		overflow: hidden;
+		width: 1px;
+		height: 1px;
+		opacity: 0;
+		transform: translateX(-1000);
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.accessible-desktop {
+		position: absolute;
+		overflow: hidden;
+		width: 1px;
+		height: 1px;
+		opacity: 0;
+		transform: translateX(-1000);
+	}
+}
