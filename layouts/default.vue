@@ -9,16 +9,21 @@
       aria-label="main"
       role="main"
     />
+    <ModalExit />
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
+import ModalExit from '~/components/global/modal-exit.vue'
 
 let bodyTag = null
 
 export default {
   name: 'App',
+  components: {
+    ModalExit
+  },
   computed: {
     ...mapGetters('modals', ['isModalOpen'])
   },
@@ -33,6 +38,44 @@ export default {
   },
   mounted () {
     bodyTag = document.getElementsByTagName('body')[0]
+    bodyTag.classList.remove('killscroll')
+
+    if (process.browser) {
+      if (this.getParameterByName('screenshot')) {
+        bodyTag.classList.add('screenshot')
+      } else {
+        bodyTag.classList.remove('screenshot')
+      }
+    }
+
+    if (this.$nuxt.$route.hash) {
+      this.scrollToHash()
+    }
+  },
+  methods: {
+    scrollToHash () {
+      const hash = this.$nuxt.$route.hash
+      this.$nextTick(() => {
+        this.$scrollTo(hash, 0, { offset: 0 })
+      })
+    },
+    getParameterByName (name, url) {
+      if (process.browser) {
+        if (!url) {
+          url = window.location.href
+        }
+        name = name.replace(/[[\]]/g, '\\$&')
+        const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)')
+        const results = regex.exec(url)
+        if (!results) {
+          return null
+        }
+        if (!results[2]) {
+          return ''
+        }
+        return decodeURIComponent(results[2].replace(/\+/g, ' '))
+      }
+    }
   },
   head () {
     return {
