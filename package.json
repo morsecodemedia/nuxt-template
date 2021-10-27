@@ -27,6 +27,7 @@
     "@nuxtjs/robots": "^2.4.2",
     "@nuxtjs/sitemap": "^2.3.2",
     "express": "^4.17.1",
+    "focus-trap-vue": "^1.1.1",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {

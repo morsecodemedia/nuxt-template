@@ -4180,6 +4180,11 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
 
+focus-trap-vue@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/focus-trap-vue/-/focus-trap-vue-1.1.1.tgz#d29d2de3c64457cc708657682a6670af73982355"
+  integrity sha512-N+M4d4uYymCogct417gUL7wWSMIW/oUcCicfg3eRdo+gz7jlQnIGwUwViFxPkKV7iyzpc81g6JeSxRWiYWU3eQ==
+
 for-in@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
