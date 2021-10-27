@@ -93,7 +93,10 @@ export default {
       ],
       link: [
         { hid: 'canonical', rel: 'canonical', href: 'https://www.domain.com/' + this.$route.path }
-      ]
+      ],
+      bodyAttrs: {
+        class: 'page-' + ((this.$route.path.length > 1) ? this.$route.path.slice(1).replace(new RegExp('/$'), '').replace(new RegExp('/', 'g'), '-') : 'home')
+      }
     }
   }
 }
