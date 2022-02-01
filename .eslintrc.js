@@ -5,17 +5,15 @@ module.exports = {
     node: true
   },
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: '@babel/eslint-parser',
+    requireConfigFile: false
   },
   extends: [
     '@nuxtjs',
     'plugin:nuxt/recommended'
   ],
+  plugins: [
+  ],
   // add your custom rules here
-  rules: {
-    'vue/no-v-html': 0,
-    'vue/singleline-html-element-content-newline': 'off',
-    'vue/multiline-html-element-content-newline': 'off',
-    'no-console': 'off'
-  }
+  rules: {}
 }
