@@ -1,6 +1,6 @@
 {
   "name": "nuxt-template",
-  "version": "2.1.3",
+  "version": "2.2.0",
   "description": "A template to start Nuxt projects, loaded with all the additional modules that are used in almost all of our projects.",
   "author": "A morsecodemedia/tomasino project",
   "contributors": [
