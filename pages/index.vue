@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'Homepage',
+  name: 'HomePage',
   head () {
     return {
       title: '',
@@ -28,7 +28,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-</style>
