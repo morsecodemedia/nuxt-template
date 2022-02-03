@@ -28,3 +28,15 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+h1 {
+  display: block;
+  background: rgb(2,0,36);
+  background: linear-gradient(164deg, rgba(2,0,36,1) 0%, rgba(107,107,232,1) 35%, rgba(0,212,255,1) 100%);
+  height: 100vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
