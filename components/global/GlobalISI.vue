@@ -39,7 +39,7 @@
 <script>
 import { mapGetters, mapMutations } from 'vuex'
 export default {
-  name: 'ISI',
+  name: 'GlobalISI',
   data () {
     return {
       fixed: false,
