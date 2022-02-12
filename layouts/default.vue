@@ -9,7 +9,7 @@
       aria-label="main"
       role="main"
     />
-    <ISI>
+    <GlobalISI>
       <h2>
         IMPORTANT SAFETY INFORMATION
       </h2>
@@ -39,24 +39,18 @@
         <em>You are encouraged to report adverse events related to <Brand /> by calling <a href="tel:18882579676">1 (888) 257-9676</a>. If you prefer, you may contact the U.S. Food and Drug Administration (FDA) directly.
           Visit <strong><a href="http://www.fda.gov/MedWatch">http://www.fda.gov/MedWatch</a></strong> or call <a href="tel:18003321088">1-800-FDA-1088</a>.</em>
       </p>
-    </ISI>
-    <ModalExit />
+    </GlobalISI>
+    <GlobalModalExit />
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
-import ModalExit from '~/components/global/modal-exit.vue'
-import ISI from '~/components/global/isi.vue'
 
 let bodyTag = null
 
 export default {
   name: 'App',
-  components: {
-    ModalExit,
-    ISI
-  },
   head () {
     return {
       title: '',
