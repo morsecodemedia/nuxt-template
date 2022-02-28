@@ -53,6 +53,10 @@ export default {
   watch: {
     showISI (val) {
       this.$refs.isiwrapper.scrollTop = 0
+    },
+    $route () {
+      // force a recalculation on route change since dom changed
+      setTimeout(this.loop, 200)
     }
   },
   mounted () {
