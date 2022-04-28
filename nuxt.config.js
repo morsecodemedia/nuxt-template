@@ -75,7 +75,9 @@ export default {
     UserAgent: '*',
     Sitemap: 'https://www.domain.com/sitemap.xml'
   },
-  redirect: [],
+  redirect: [
+    { from: '^(\\/[^\\?]*[^\\/])(\\?.*)?$', to: '$1/$2', statusCode: 301 }
+  ],
   /*
   ** Build configuration
   */
