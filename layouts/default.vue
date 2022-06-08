@@ -37,7 +37,7 @@
       </p>
       <p>
         <em>You are encouraged to report adverse events related to <Brand /> by calling <a href="tel:18882579676">1 (888) 257-9676</a>. If you prefer, you may contact the U.S. Food and Drug Administration (FDA) directly.
-          Visit <strong><a href="http://www.fda.gov/MedWatch">http://www.fda.gov/MedWatch</a></strong> or call <a href="tel:18003321088">1-800-FDA-1088</a>.</em>
+          Visit <strong><a href="http://www.fda.gov/MedWatch" @click="exitlink">http://www.fda.gov/MedWatch</a></strong> or call <a href="tel:18003321088">1-800-FDA-1088</a>.</em>
       </p>
     </GlobalISI>
     <GlobalModalExit />
@@ -100,6 +100,10 @@ export default {
     }
   },
   methods: {
+    exitlink (e) {
+      // necessary because $exitlink isn't defined in layout on creation
+      this.$exitlink(e)
+    },
     scrollToHash () {
       const hash = this.$nuxt.$route.hash
       this.$nextTick(() => {

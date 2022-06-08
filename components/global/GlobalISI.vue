@@ -2,7 +2,7 @@
   <section
     id="important-safety-information"
     ref="isi"
-    :class="{ fixed: fixed, fullscreen: showISI, shrink: shrink }"
+    :class="{ fixed: fixed, fullscreen: isOpen, shrink: shrink }"
     class="white-bg"
   >
     <div
@@ -16,13 +16,13 @@
           <span class="isi-see-more-text">
             <span
               class="view-all"
-              @click="toggleISI();"
+              @click="$toggleModal(modalName)"
             >
               View all
             </span>
             <span
               class="collapse"
-              @click="toggleISI();"
+              @click="$toggleModal(modalName)"
             >
               View less
             </span>
@@ -37,21 +37,22 @@
 </template>
 
 <script>
-import { mapGetters, mapMutations } from 'vuex'
 export default {
-  name: 'GlobalISI',
   data () {
     return {
+      modalName: 'isi',
       fixed: false,
       shrink: false,
       shrinkPoint: 50
     }
   },
   computed: {
-    ...mapGetters('modals', ['showISI'])
+    isOpen () {
+      return this.$store.getters['modals/isModalOfNameOpen'](this.modalName)
+    }
   },
   watch: {
-    showISI (val) {
+    isOpen (val) {
       this.$refs.isiwrapper.scrollTop = 0
     },
     $route () {
@@ -69,7 +70,6 @@ export default {
     this.$removeScrollListener(this.loop)
   },
   methods: {
-    ...mapMutations('modals', ['toggleISI']),
     loop () {
       if (process.browser) {
         const y = window.pageYOffset
