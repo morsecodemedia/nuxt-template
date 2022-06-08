@@ -1,7 +1,12 @@
 <template>
-  <h1>
-    Hello World!
-  </h1>
+  <div>
+    <h1>
+      Hello World!
+    </h1>
+    <p>
+      <a href="http://www.fda.gov/MedWatch" @click="$exitlink">http://www.fda.gov/MedWatch</a>
+    </p>
+  </div>
 </template>
 
 <script>
