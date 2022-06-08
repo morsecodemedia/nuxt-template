@@ -41,9 +41,6 @@
       </p>
     </GlobalISI>
     <GlobalModalExit />
-    <GlobalModal modal-name="test">
-      Moo.
-    </GlobalModal>
   </div>
 </template>
 
