@@ -45,7 +45,6 @@ export default {
   },
   methods: {
     close () {
-      console.log('modalName:', this.modalName)
       this.$closeModal(this.modalName)
     }
   }
