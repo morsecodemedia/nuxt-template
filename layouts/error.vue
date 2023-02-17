@@ -1,46 +1,19 @@
 <template>
   <div>
-    <div id="skip">
-      <a class="skip-main" href="#main">Skip to main content</a>
+    <div id="error">
+      <section>
+        <h1 v-if="error.statusCode === 404">
+          Page not found
+        </h1>
+        <h1 v-else>
+          An error occurred
+          {{ error }}
+        </h1>
+        <nuxt-link to="/">
+          Back to main
+        </nuxt-link>
+      </section>
     </div>
-    <nuxt
-      id="main"
-      ref="main"
-      aria-label="main"
-      role="main"
-    />
-    <GlobalISI>
-      <h2>
-        IMPORTANT SAFETY INFORMATION
-      </h2>
-      <p>
-        <strong>Indication for Use</strong>
-      </p>
-      <p>
-        <Brand /> is a brand that treats a medical condition.
-      </p>
-      <p>
-        <strong>Contraindication</strong>
-      </p>
-      <p>
-        <Brand /> is contraindicated in the presence of clinically important elements.
-      </p>
-      <p>
-        <strong>Warnings &amp; Precautions</strong>
-      </p>
-      <ul>
-        <li><Brand /> is intended for single use only. <strong>Do not</strong> reuse, resterilize, reprocess, or use if primary packaging has been opened or damaged. Discard after use.</li>
-      </ul>
-      <p>
-        <strong>Storage &amp; Handling:</strong>
-        Store between -95°C and +90°C and keep away from direct sunlight and high humidity.
-      </p>
-      <p>
-        <em>You are encouraged to report adverse events related to <Brand /> by calling <a href="tel:18882579676">1 (888) 257-9676</a>. If you prefer, you may contact the U.S. Food and Drug Administration (FDA) directly.
-          Visit <strong><a href="http://www.fda.gov/MedWatch" @click="exitlink">http://www.fda.gov/MedWatch</a></strong> or call <a href="tel:18003321088">1-800-FDA-1088</a>.</em>
-      </p>
-    </GlobalISI>
-    <GlobalModalExit />
   </div>
 </template>
 
@@ -50,7 +23,14 @@ import { mapGetters } from 'vuex'
 let bodyTag = null
 
 export default {
-  name: 'App',
+  name: 'Error',
+  layout: 'default',
+  props: {
+    error: {
+      type: Object,
+      default: null
+    }
+  },
   head () {
     return {
       title: '',
@@ -58,10 +38,10 @@ export default {
         { hid: 'ogtitle', property: 'og:title', content: '' },
         { hid: 'twtitle', name: 'twitter:title', content: '' },
         { hid: 'googlename', itemprop: 'name', content: '' },
-        { hid: 'description', name: 'description', content: '' },
-        { hid: 'ogdescription', property: 'og:description', content: '' },
-        { hid: 'twdescription', name: 'twitter:description', content: '' },
-        { hid: 'googledescription', itemprop: 'description', content: '' },
+        { hid: 'description', name: 'description', content: 'Page not found' },
+        { hid: 'ogdescription', property: 'og:description', content: 'Page not found' },
+        { hid: 'twdescription', name: 'twitter:description', content: 'Page not found' },
+        { hid: 'googledescription', itemprop: 'description', content: 'Page not found' },
         { hid: 'ogurl', property: 'og:url', content: 'https://www.domain.com' + this.$route.path },
         { hid: 'twsite', name: 'twitter:site', content: 'https://www.domain.com' + this.$route.path }
       ],
@@ -100,10 +80,6 @@ export default {
     }
   },
   methods: {
-    exitlink (e) {
-      // necessary because $exitlink isn't defined in layout on creation
-      this.$exitlink(e)
-    },
     scrollToHash () {
       const hash = this.$nuxt.$route.hash
       this.$nextTick(() => {

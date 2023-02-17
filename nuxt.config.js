@@ -1,6 +1,7 @@
-
 export default {
   telemetry: false,
+  target: 'static',
+  ssr: false,
   /*
   ** Headers of the page
   */
@@ -34,11 +35,12 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { mode: 'client', src: '~/plugins/focus-trap.js' },
-    { mode: 'client', src: '~/plugins/resize-frame.js' },
-    { mode: 'client', src: '~/plugins/scroll-frame.js' },
+    { src: '~/plugins/router.js' },
     { mode: 'client', src: '~/plugins/modals.js' },
+    { mode: 'client', src: '~/plugins/focus-trap.js' },
     { mode: 'client', src: '~/plugins/exit-link.js' },
+    { mode: 'client', src: '~/plugins/scroll-frame.js' },
+    { mode: 'client', src: '~/plugins/resize-frame.js' },
     { mode: 'client', src: '~/plugins/vh.js' }
   ],
   /*
@@ -54,6 +56,7 @@ export default {
   modules: [
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
+    '@nuxtjs/gtm',
     '@nuxtjs/redirect-module'
   ],
   sitemap: {
@@ -73,6 +76,10 @@ export default {
       }
     ]
   },
+  gtm: {
+    enabled: true,
+    id: ''
+  },
   robots: {
     UserAgent: '*',
     Sitemap: 'https://www.domain.com/sitemap.xml'
@@ -90,5 +97,11 @@ export default {
     extend (config, ctx) {
     }
   },
-  components: true
+  generate: {
+    fallback: true
+  },
+  components: true,
+  router: {
+    trailingSlash: true
+  }
 }

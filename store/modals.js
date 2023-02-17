@@ -1,28 +1,33 @@
 export const state = () => ({
-  modalStack: [],
-  modalData: {}
+  modalStack: []
 })
 
 export const mutations = {
   toggleModal: (state, { modal, data }) => {
-    if (state.modalStack.includes(modal)) {
-      state.modalStack = state.modalStack.filter(id => id !== modal)
-      delete state.modalData[modal]
+    if (state.modalStack.some(item => item.id === modal)) {
+      // if exists, remove by splice (reactive)
+      const index = state.modalStack.findIndex(item => item.id === modal)
+      state.modalStack.splice(index, 1)
     } else {
-      state.modalStack.push(modal)
-      state.modalData[modal] = data
+      // if not exists, add by push (reactive)
+      state.modalStack.push({ id: modal, data })
     }
   },
   setModalOn: (state, { modal, data }) => {
-    const index = state.modalStack.indexOf(modal)
-    if (index === -1) {
-      state.modalStack.push(modal)
+    if (state.modalStack.some(item => item.id === modal)) {
+      // if exists, remove by splice (reactive)
+      const index = state.modalStack.findIndex(item => item.id === modal)
+      state.modalStack.splice(index, 1)
     }
-    state.modalData[modal] = data
+    // regardless of above add by push (reactive)
+    state.modalStack.push({ id: modal, data })
   },
   setModalOff: (state, modal) => {
-    state.modalStack = state.modalStack.filter(id => id !== modal)
-    delete state.modalData[modal]
+    if (state.modalStack.some(item => item.id === modal)) {
+      // if exists, remove by splice (reactive)
+      const index = state.modalStack.findIndex(item => item.id === modal)
+      state.modalStack.splice(index, 1)
+    }
   }
 }
 
@@ -31,9 +36,10 @@ export const getters = {
     return (state.modalStack.length > 0)
   },
   isModalOfNameOpen: state => (modal) => {
-    return state.modalStack.includes(modal)
+    return state.modalStack.some(item => item.id === modal)
   },
   getModalData: state => (modal) => {
-    return state.modalData[modal]
+    const needle = state.modalStack.find(item => item.id === modal)
+    return (needle) ? needle.data : null
   }
 }
