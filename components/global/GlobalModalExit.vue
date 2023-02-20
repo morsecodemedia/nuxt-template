@@ -8,9 +8,9 @@
         rel="noopener nofollow"
         tabindex="0"
         class="continue-btn"
-        href="#"
+        :href="exitLink"
         target="_blank"
-        @click="[navigate($event), prop.close($event)]"
+        @click="close"
       >
         Continue
       </a>
@@ -33,15 +33,19 @@ export default {
       modalName: 'exit'
     }
   },
+  computed: {
+    isOpen () {
+      return this.$store.getters['modals/isModalOfNameOpen'](this.modalName)
+    },
+    exitLink () {
+      return this.$store.getters['modals/getModalData'](this.modalName)
+    }
+  },
   methods: {
-    navigate (e) {
-      const data = this.$store.getters['modals/getModalData'](this.modalName)
-      let href = ''
-      if (data && Object.hasOwn(data, 'href')) {
-        href = data.href
-        window.open(href, '_blank')
-      }
-      e.preventDefault()
+    close () {
+      setTimeout(() => {
+        this.prop.close()
+      }, 500)
     }
   }
 }

@@ -1,0 +1,62 @@
+#important-safety-information .isi-wrapper .container1 .isi-container {
+  max-width: var(--site-width);
+  margin: 0 auto;
+  padding: 15px 5% 0 5%;
+  width: 100%;
+  font-size: 20px;
+  line-height: 28px;
+  color: var(--black);
+
+  ul {
+    margin-left: 20px;
+    padding: 0;
+  }
+  p.list-title {
+    margin-bottom: 0;
+  }
+
+  .isi-header,
+  .isi-subheader {
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 0.5em;
+  }
+  .description{
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 0.5em;
+  }
+  li.description {
+    list-style: disc;
+  }
+  .description-strong{
+    font-weight: bold;
+  }
+  .warnings-list{
+    padding-left: 20px;
+  }
+  .warnings-sublist .description{
+    list-style-type: circle;
+  }
+  .link, .link:hover, .link:focus{
+    text-decoration: underline;
+    color: var(--black);
+  }
+  .preText{
+    font-weight: bold;
+    font-style: italic;
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+#important-safety-information .isi-wrapper .container1 .isi-see-more .view-all,
+#important-safety-information .isi-wrapper .container1 .isi-see-more .collapse {
+  color: var(--black);
+}
+
+#important-safety-information.fixed .isi-wrapper .container1 .isi-container {
+  padding: 30px 5% 0 5%;
+}
+

@@ -1,15 +1,11 @@
 export default ({ store }, inject) => {
   inject('exitlink', exitlink)
-  inject('closeexit', closeexit)
 
   function exitlink (e) {
-    const href = gethref(e.target)
-    store.commit('modals/setModalOn', { modal: 'exit', data: { href } })
+    const data = gethref(e.target)
+    const modal = 'exit'
+    store.commit('modals/setModalOn', { modal, data })
     e.preventDefault()
-  }
-
-  function closeexit () {
-    store.commit('modals/setModalOff', 'exit')
   }
 
   function gethref (e) {

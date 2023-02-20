@@ -1,3 +1,21 @@
+html, body{
+  scroll-behavior: smooth;
+}
+body{
+  margin: 0px;
+  padding: 0px;
+  background-color: var(--offwhite);
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -font-smoothing: antialiased;
+}
+#__layout {
+  max-width: var(--hard-width);
+  margin: 0 auto;
+  background-color: var(--white);
+  position: relative;
+}
+
 #main,
 #main:active,
 #main:focus {
@@ -35,32 +53,32 @@
 }
 
 .accessible {
-	position: absolute;
-	overflow: hidden;
-	width: 1px;
-	height: 1px;
-	opacity: 0;
-	transform: translateX(-1000);
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  transform: translateX(-1000);
 }
 
 @media screen and (max-width: 767px) {
-	.accessible-mobile {
-		position: absolute;
-		overflow: hidden;
-		width: 1px;
-		height: 1px;
-		opacity: 0;
-		transform: translateX(-1000);
-	}
+  .accessible-mobile {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    transform: translateX(-1000);
+  }
 }
 
 @media screen and (min-width: 768px) {
-	.accessible-desktop {
-		position: absolute;
-		overflow: hidden;
-		width: 1px;
-		height: 1px;
-		opacity: 0;
-		transform: translateX(-1000);
-	}
+  .accessible-desktop {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    transform: translateX(-1000);
+  }
 }
